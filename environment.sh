@@ -19,7 +19,7 @@ done
 if [ -z "$VIRTUAL_ENV" ]; then
   if ! [ -d $ANS_ROOT_DIR/venv ]; then
     echo '-- No virtualenv detected; creating'
-    virtualenv $ANS_ROOT_DIR/venv || (echo '!!! virtualenv creation failed' && return)
+    python3 -m venv $ANS_ROOT_DIR/venv || (echo '!!! virtualenv creation failed' && return)
     mkdir ~/.ansible
     mkdir ~/facts_cache
     touch ~/.ssh/secure_located_file
